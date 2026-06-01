@@ -17,39 +17,39 @@ API-бэкенд для платформы Yatube, реализованный н
   * ReDoc: `/api/v1/redoc/`
 * **Аутентификация:** токен (TokenAuthentication)
 
-### Как запустить проект:
+### Как запустить проект
 
 1. Клонировать репозиторий и перейти в него в командной строке:
-```
+```bash
 git clone https://github.com/yuushin666/api-yatube.git
 cd api-yatube/
 ```
 2. Cоздать и активировать виртуальное окружение:
 - Linux и macOS:
-```
+```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 - Windows:
-```
+```bash
 python -m venv venv
 source venv/Scripts/activate
 ```
 3. Установить зависимости из файла `requirements.txt`:
-```
+```bash
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 4. Перейти в основную директорию проекта:
-```
+```bash
 cd yatube_api/
 ```
 5. Выполнить миграции:
-```
+```bash
 python manage.py migrate
 ```
 6. Запустить проект:
-```
+```bash
 python manage.py runserver
 ```
 
@@ -88,6 +88,8 @@ python manage.py runserver
 
 ### Получение токена:
 **POST `/api/v1/api-token-auth/`**
+
+**Тело запроса:**
 ```json
 {
     "username": "anton",
@@ -103,6 +105,7 @@ python manage.py runserver
 
 ### Добавление нового поста:
 **POST `/api/v1/posts/`**
+
 **Тело запроса:**
 ```json
 {
@@ -122,8 +125,10 @@ python manage.py runserver
 }
 ```
 
-### Добавление комментария к посту (id=14):
+### Добавление комментария к посту (`id=14`):
 **POST `/api/v1/posts/14/comments/`**
+
+**Тело запроса:**
 ```json
 {
     "text": "тест тест"
@@ -140,7 +145,7 @@ python manage.py runserver
 } 
 ```
 
-### Получение информации о группе (id=2):
+### Получение информации о группе (`id=2`):
 **GET `/api/v1/groups/2/`**
 **Пример ответа:**
 ```json
