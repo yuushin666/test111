@@ -147,6 +147,7 @@ python manage.py runserver
 
 ### Получение информации о группе (`id=2`):
 **GET `/api/v1/groups/2/`**
+
 **Пример ответа:**
 ```json
 {
